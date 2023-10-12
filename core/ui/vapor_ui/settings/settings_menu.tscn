@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3]
+[gd_scene load_steps=36 format=3 uid="uid://d4m7le7qv6d8g"]
 
 [ext_resource type="Script" path="res://core/ui/vapor_ui/settings/settings_menu.gd" id="1_olmbp"]
 [ext_resource type="Theme" uid="uid://bko0q7gp1hwjp" path="res://assets/themes/dracula.tres" id="2_7txcp"]
@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://e7bbebwf7guj" path="res://assets/state/states/main_menu.tres" id="4_cyj3i"]
 [ext_resource type="PackedScene" path="res://core/ui/vapor_ui/settings/plugin_store_menu.tscn" id="4_dx1s7"]
 [ext_resource type="Resource" uid="uid://bmgs1ngma1523" path="res://assets/state/states/in_game_menu.tres" id="5_tny5o"]
-[ext_resource type="Resource" uid="uid://bp807nlks8eq1" path="res://assets/state/states/quick_bar.tres" id="6_fyuji"]
+[ext_resource type="Resource" uid="uid://bp807nlks8eq1" path="res://assets/state/states/quick_bar_menu.tres" id="6_fyuji"]
 [ext_resource type="PackedScene" uid="uid://jdm8pltsv5ka" path="res://core/ui/vapor_ui/settings/plugin_settings_menu.tscn" id="6_tmsre"]
 [ext_resource type="Resource" uid="uid://dja3m1mevv6xw" path="res://assets/state/states/osk.tres" id="7_jneep"]
 [ext_resource type="PackedScene" uid="uid://ccd4sw84h1qbc" path="res://core/systems/input/back_input_handler.tscn" id="8_tshgy"]

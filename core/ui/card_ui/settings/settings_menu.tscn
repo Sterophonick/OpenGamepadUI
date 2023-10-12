@@ -1,11 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://d2jiecrd5sw4s"]
+[gd_scene load_steps=43 format=3 uid="uid://d2jiecrd5sw4s"]
 
 [ext_resource type="Script" path="res://core/ui/card_ui/settings/settings_menu.gd" id="1_x5bjx"]
 [ext_resource type="PackedScene" uid="uid://orey8uxm7v6v" path="res://core/systems/state/visibility_manager.tscn" id="2_xwevg"]
 [ext_resource type="Resource" uid="uid://d3gp85f35oiw6" path="res://assets/state/states/settings.tres" id="3_an6bd"]
 [ext_resource type="Resource" uid="uid://e7bbebwf7guj" path="res://assets/state/states/main_menu.tres" id="4_3yyw8"]
 [ext_resource type="Resource" uid="uid://bmgs1ngma1523" path="res://assets/state/states/in_game_menu.tres" id="5_t0lm2"]
-[ext_resource type="Resource" uid="uid://bp807nlks8eq1" path="res://assets/state/states/quick_bar.tres" id="6_l4ywh"]
+[ext_resource type="Resource" uid="uid://bp807nlks8eq1" path="res://assets/state/states/quick_bar_menu.tres" id="6_l4ywh"]
 [ext_resource type="Resource" uid="uid://dja3m1mevv6xw" path="res://assets/state/states/osk.tres" id="7_mmjyu"]
 [ext_resource type="Resource" uid="uid://bw0mtk7sso8m2" path="res://assets/state/states/power_menu.tres" id="8_u3uua"]
 [ext_resource type="PackedScene" uid="uid://ccd4sw84h1qbc" path="res://core/systems/input/back_input_handler.tscn" id="9_op1y2"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cpss2bhdwm8t7" path="res://core/ui/vapor_ui/settings/network_settings_menu.tscn" id="31_35x2h"]
 [ext_resource type="PackedScene" path="res://core/ui/vapor_ui/settings/audio_settings_menu.tscn" id="32_dqi6v"]
 [ext_resource type="PackedScene" uid="uid://6ygxdkvh1hib" path="res://core/ui/card_ui/settings/bluetooth_settings_menu.tscn" id="33_a7xb2"]
+[ext_resource type="PackedScene" uid="uid://6kjs1bu1mwfw" path="res://core/ui/card_ui/settings/controller_settings_menu.tscn" id="34_6c6qc"]
 [ext_resource type="PackedScene" uid="uid://cf5bdr4sh2irb" path="res://core/ui/card_ui/settings/plugin_store_menu.tscn" id="35_0u4bv"]
 [ext_resource type="PackedScene" uid="uid://cliqk7lo4t8ao" path="res://core/ui/card_ui/settings/plugin_settings_menu.tscn" id="35_dooq8"]
 [ext_resource type="PackedScene" uid="uid://bfu4edkk5dqt2" path="res://core/ui/vapor_ui/debug/processes_menu.tscn" id="36_hnokx"]
@@ -388,6 +389,18 @@ state = ExtResource("18_ljeud")
 
 [node name="TransitionFadeIn" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/DisplaySettings/VisibilityManager" instance=ExtResource("29_grs7x")]
 
+[node name="ControllerSettings" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer" instance=ExtResource("34_6c6qc")]
+layout_mode = 2
+
+[node name="FocusGroup" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings/VBoxContainer" index="0" node_paths=PackedStringArray("current_focus")]
+current_focus = NodePath("../AllowGuidelessControllersToggle")
+
+[node name="VisibilityManager" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings" instance=ExtResource("2_xwevg")]
+state_machine = ExtResource("15_cb33u")
+state = ExtResource("18_ljeud")
+
+[node name="TransitionFadeIn" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings/VisibilityManager" instance=ExtResource("29_grs7x")]
+
 [node name="NetworkSettings" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer" instance=ExtResource("31_35x2h")]
 visible = false
 layout_mode = 2
@@ -448,6 +461,7 @@ state = ExtResource("25_nijem")
 
 [editable path="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/GeneralSettings"]
 [editable path="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/DisplaySettings"]
+[editable path="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings"]
 [editable path="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/NetworkSettings"]
 [editable path="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/BluetoothSettingsMenu"]
 [editable path="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/AudioSettingsMenu"]

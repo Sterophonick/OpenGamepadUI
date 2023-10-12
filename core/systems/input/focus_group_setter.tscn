@@ -4,3 +4,4 @@
 
 [node name="FocusGroupSetter" type="Node"]
 script = ExtResource("1_snu2o")
+on_signal = ""
