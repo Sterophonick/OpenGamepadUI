@@ -207,7 +207,7 @@ action = 3
 on_signal = "focus_entered"
 
 [node name="FocusGroupSetter" parent="MarginContainer/HBoxContainer/MenuContainer/VBoxContainer/ButtonContainer/MarginContainer/ScrollContainer/MarginContainer/SettingButtonsContainer/ControllerButton" node_paths=PackedStringArray("target") instance=ExtResource("18_axp35")]
-target = NodePath("../../../../../../../../../ContentContainer/VBoxContainer/ContentContainer/MarginContainer/DisplaySettings/VBoxContainer/FocusGroup")
+target = NodePath("../../../../../../../../../ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings/MarginContainer/VBoxContainer/FocusGroup")
 on_signal = "pressed"
 
 [node name="NetworkButton" parent="MarginContainer/HBoxContainer/MenuContainer/VBoxContainer/ButtonContainer/MarginContainer/ScrollContainer/MarginContainer/SettingButtonsContainer" instance=ExtResource("14_obber")]
@@ -393,12 +393,9 @@ state = ExtResource("18_ljeud")
 visible = false
 layout_mode = 2
 
-[node name="FocusGroup" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings/VBoxContainer" index="0" node_paths=PackedStringArray("current_focus")]
-current_focus = NodePath("../AllowGuidelessControllersToggle")
-
 [node name="VisibilityManager" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings" instance=ExtResource("2_xwevg")]
 state_machine = ExtResource("15_cb33u")
-state = ExtResource("18_ljeud")
+state = ExtResource("20_68mlt")
 
 [node name="TransitionFadeIn" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings/VisibilityManager" instance=ExtResource("29_grs7x")]
 

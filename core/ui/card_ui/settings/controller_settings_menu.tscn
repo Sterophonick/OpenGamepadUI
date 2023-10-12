@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://6kjs1bu1mwfw"]
+[gd_scene load_steps=7 format=3 uid="uid://6kjs1bu1mwfw"]
 
 [ext_resource type="Script" path="res://core/ui/card_ui/settings/controller_settings_menu.gd" id="1_sm6l2"]
 [ext_resource type="PackedScene" uid="uid://8m20p2s0v5gb" path="res://core/systems/input/focus_group.tscn" id="2_phcuh"]
 [ext_resource type="Resource" uid="uid://dgi16frh3mgj8" path="res://core/ui/card_ui/settings/settings_menu_focus.tres" id="3_t0lbh"]
 [ext_resource type="PackedScene" uid="uid://dithv38oqgy58" path="res://core/ui/components/section_label.tscn" id="4_w6kpf"]
+[ext_resource type="PackedScene" uid="uid://d1qb7euwlu7bh" path="res://core/ui/components/toggle.tscn" id="5_hgpta"]
 [ext_resource type="Script" path="res://core/systems/input/scroller_joystick.gd" id="5_x5geq"]
 
 [node name="ControllerSettings" type="ScrollContainer"]
@@ -14,25 +15,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sm6l2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="FocusGroup" parent="VBoxContainer" instance=ExtResource("2_phcuh")]
+[node name="FocusGroup" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("current_focus") instance=ExtResource("2_phcuh")]
+current_focus = NodePath("")
 focus_stack = ExtResource("3_t0lbh")
 
-[node name="DisplayLabel" parent="VBoxContainer" instance=ExtResource("4_w6kpf")]
+[node name="DisplayLabel" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_w6kpf")]
 layout_mode = 2
 text = "Controllers
 "
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AllowGuidelessControllersToggle" type="CheckButton" parent="VBoxContainer"]
+[node name="AllowGuidelessToggle" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_hgpta")]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Allow Controllers Without Guide Buttons"
+separator_visible = false
+button_pressed = false
 
 [node name="ScrollerJoystick" type="Node" parent="."]
 script = ExtResource("5_x5geq")
