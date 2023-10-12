@@ -19,8 +19,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="FocusGroup" parent="VBoxContainer" node_paths=PackedStringArray("current_focus") instance=ExtResource("2_phcuh")]
-current_focus = NodePath("")
+[node name="FocusGroup" parent="VBoxContainer" instance=ExtResource("2_phcuh")]
 focus_stack = ExtResource("3_t0lbh")
 
 [node name="DisplayLabel" parent="VBoxContainer" instance=ExtResource("4_w6kpf")]
@@ -33,6 +32,7 @@ layout_mode = 2
 
 [node name="AllowGuidelessControllersToggle" type="CheckButton" parent="VBoxContainer"]
 layout_mode = 2
+text = "Allow Controllers Without Guide Buttons"
 
 [node name="ScrollerJoystick" type="Node" parent="."]
 script = ExtResource("5_x5geq")
