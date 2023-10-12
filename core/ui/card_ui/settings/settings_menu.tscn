@@ -390,6 +390,7 @@ state = ExtResource("18_ljeud")
 [node name="TransitionFadeIn" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/DisplaySettings/VisibilityManager" instance=ExtResource("29_grs7x")]
 
 [node name="ControllerSettings" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer" instance=ExtResource("34_6c6qc")]
+visible = false
 layout_mode = 2
 
 [node name="FocusGroup" parent="MarginContainer/HBoxContainer/ContentContainer/VBoxContainer/ContentContainer/MarginContainer/ControllerSettings/VBoxContainer" index="0" node_paths=PackedStringArray("current_focus")]
